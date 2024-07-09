@@ -15,7 +15,7 @@ const Nav = () => {
                     <NavLink to="/"><FaCircle /> Live</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/"><FaTrophy /> Concours </NavLink>
+                    <NavLink to="/giveaways"><FaTrophy /> Concours </NavLink>
                 </li>
                 <li>
                     <NavLink to="/"><MdArticle /> Articles </NavLink>
