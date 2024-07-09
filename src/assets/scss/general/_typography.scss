@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Pixel";
+    src: url('../../../fonts/ARCADECLASSIC.TTF');
+    font-display: swap;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url('../../../fonts/Poppins/Poppins-Regular.ttf');
+    font-display: swap;
+}
+
+h1 {
+    font-family: $font-001;
+    font-size: $font-xxxxl;
+    color: $white;
+}

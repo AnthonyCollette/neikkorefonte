@@ -1,0 +1,22 @@
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+body {
+    font-size: $font-md;
+    background: linear-gradient(45deg, $color-001, $color-002);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+}
