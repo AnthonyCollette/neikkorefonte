@@ -1,23 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
-import { useStoryblok, StoryblokComponent } from '@storyblok/react'
+import GiveawayResume from '../components/GiveawayResume'
 
 const Concours = () => {
 
-    const fetchData = async () => {
-        console.log(story)
-    }
+    const [giveaways, setGiveaways] = useState()
 
-    let slug = "giveaways"
-
-    const story = useStoryblok(slug, { version: 'draft' })
+    useEffect(() => {
+        fetch('https://api.storyblok.com/v2/cdn/stories?starts_with=giveaways&token=' + process.env.REACT_APP_STORYBLOK_TOKEN).then(res => res.json()).then(data => {
+            setGiveaways(data.stories)
+        })
+    }, [])
 
     return (
         <div className='page'>
             <Nav />
             <section className='container giveaways'>
                 <h1>Giveaways</h1>
-                <button onClick={fetchData}>Test</button>
+                <div className="giveaways-list">
+                    {giveaways?.map((giveaway, index) => <GiveawayResume key={index} id={giveaway.id} title={giveaway.content.body[0].title} image={giveaway.content.body[0].image} richtext={giveaway.content.body[0].description} finish={giveaway.content.body[0].finish}  winner={giveaway.content.body[0].winner} />)}
+                </div>
             </section>
         </div>
     );

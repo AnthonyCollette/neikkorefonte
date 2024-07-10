@@ -1,6 +1,11 @@
 @import './general/normalize';
 @import './utils/variables';
+@import './utils/mixins';
 @import './general/typography';
 @import './general/general';
+@import './components/buttons';
+@import './components/giveaway';
 @import './layouts/nav';
 @import './layouts/twitch';
+@import './layouts/giveaways';
+@import './layouts/modal';

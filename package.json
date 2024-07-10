@@ -15,6 +15,7 @@
     "react-scripts": "5.0.1",
     "react-twitch-embed": "^3.0.2",
     "sass": "^1.77.6",
+    "storyblok-rich-text-react-renderer": "^2.9.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

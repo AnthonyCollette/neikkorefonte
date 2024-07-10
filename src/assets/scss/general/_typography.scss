@@ -8,9 +8,15 @@
     src: url('../../../fonts/Poppins/Poppins-Regular.ttf');
     font-display: swap;
 }
+@font-face {
+    font-family: "Poppins Bold";
+    src: url('../../../fonts/Poppins/Poppins-Bold.ttf');
+    font-display: swap;
+}
 
 h1 {
     font-family: $font-001;
     font-size: $font-xxxxl;
     color: $white;
+    text-align: center;
 }

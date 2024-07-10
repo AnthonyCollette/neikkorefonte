@@ -1,10 +1,17 @@
 nav {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 100%;
+    width: 225px;
+
+    ul {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
     img {
         width: 100px;
     }
+
     li {
         padding: 20px 50px 20px 20px;
         border: 1px solid $white;
@@ -13,7 +20,7 @@ nav {
         position: relative;
         cursor: pointer;
         margin-bottom: -1px;
-        
+
         &::before {
             content: '';
             position: absolute;
@@ -31,6 +38,7 @@ nav {
             &::before {
                 transform: translateX(100%);
             }
+
             a {
                 color: $color-006;
             }
@@ -39,11 +47,13 @@ nav {
         &:has(img) {
             border: none;
             padding: 0;
+
             &::before {
                 display: none;
             }
         }
     }
+
     a {
         font-family: $font-001;
         font-size: $font-xxl;
