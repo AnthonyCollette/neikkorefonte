@@ -2,10 +2,31 @@ nav {
     height: 100%;
     width: 225px;
 
-    ul {
+    .nav-container {
         position: fixed;
         top: 50%;
         transform: translateY(-50%);
+    }
+
+    .social-medias {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        margin-top: 20px;
+
+        a:hover {
+            svg * {
+                fill: $color-006;
+            }
+        }
+
+        svg {
+            width: 40px;
+            height: 40px;
+            * {
+                transition: all 0.3s ease-in-out;
+            }
+        }
     }
 
     img {

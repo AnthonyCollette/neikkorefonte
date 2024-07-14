@@ -4,26 +4,31 @@ import { FaTrophy } from 'react-icons/fa';
 import { createPortal } from 'react-dom';
 import { IoIosClose } from 'react-icons/io';
 
-const GiveawayResume = ({ title, richtext, image, finish, winner }) => {
+const GiveawayResume = ({ title, richtext, image, finish, winner, date }) => {
 
     const [openModal, setOpenModal] = useState(false)
 
-    const handleClick = () => {
-        if (finish) {
-            return
-        } else {
-            return setOpenModal(!openModal)
+    const displayDate = () => {
+        if (finish && date) {
+            return <p className='date'>Terminé le {date}</p>
+        } else if (!finish && date) {
+            return <p className='date'>Jusqu'au {date}</p>
         }
     }
 
     return (
-        <article className={finish ? 'giveaway__resume finished' : 'giveaway__resume'} onClick={handleClick}>
+        <article className={finish ? 'giveaway__resume finished' : 'giveaway__resume'} onClick={() => setOpenModal(!openModal)}>
             <div className="overlay">
-                <p className="winner"><FaTrophy /> {winner}</p>
+                <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M7.84308 3.80211C9.8718 2.6007 10.8862 2 12 2C13.1138 2 14.1282 2.6007 16.1569 3.80211L16.8431 4.20846C18.8718 5.40987 19.8862 6.01057 20.4431 7C21 7.98943 21 9.19084 21 11.5937V12.4063C21 14.8092 21 16.0106 20.4431 17C19.8862 17.9894 18.8718 18.5901 16.8431 19.7915L16.1569 20.1979C14.1282 21.3993 13.1138 22 12 22C10.8862 22 9.8718 21.3993 7.84308 20.1979L7.15692 19.7915C5.1282 18.5901 4.11384 17.9894 3.55692 17C3 16.0106 3 14.8092 3 12.4063V11.5937C3 9.19084 3 7.98943 3.55692 7C4.11384 6.01057 5.1282 5.40987 7.15692 4.20846L7.84308 3.80211ZM13 16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16C11 15.4477 11.4477 15 12 15C12.5523 15 13 15.4477 13 16ZM12 6.25C12.4142 6.25 12.75 6.58579 12.75 7V13C12.75 13.4142 12.4142 13.75 12 13.75C11.5858 13.75 11.25 13.4142 11.25 13V7C11.25 6.58579 11.5858 6.25 12 6.25Z" />
+                </svg>
+                <h4>Concours terminé</h4>
+                {winner ? <p className="winner"><FaTrophy /> {winner}</p> : ''}
             </div>
             <h2>{title}</h2>
             <img src={image} alt="Photo du lot à gagner" />
             <RichText richtext={richtext} />
+            {displayDate()}
 
             {openModal && createPortal(<div className='modal' onClick={() => setOpenModal(false)}>
                 <div className='modal__content' onClick={(e) => e.stopPropagation()}>
@@ -31,8 +36,9 @@ const GiveawayResume = ({ title, richtext, image, finish, winner }) => {
                         <img src={image} alt="Photo du lot à gagner" />
                     </div>
                     <div className='column'>
-                        <IoIosClose onClick={() => setOpenModal(false)}/>
+                        <IoIosClose onClick={() => setOpenModal(false)} />
                         <h2>{title}</h2>
+                        <p>{date}</p>
                         <RichText richtext={richtext} />
                     </div>
                 </div>

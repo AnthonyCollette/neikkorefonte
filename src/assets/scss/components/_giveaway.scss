@@ -38,11 +38,17 @@
         display: none;
     }
 
+    .date {
+        font-family: $font-002--italic;
+    }
+
     &.finished {
-        cursor: not-allowed;
         
         .overlay {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             position: absolute;
             inset: 0 0 0 0;
             background-color: rgba($color: $black, $alpha: 0.4);
@@ -50,6 +56,19 @@
             height: 100%;
             z-index: 999;
             border-radius: 10px;
+
+            h4 {
+                color: $error;
+                font-size: $font-xxl;
+            }
+
+            > svg {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 20px;
+                * {
+                fill: $error;
+            }}
 
             p {
                 position: absolute;
