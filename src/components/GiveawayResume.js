@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import RichText from './RichText';
-import { FaTrophy } from 'react-icons/fa';
+import { FaTrophy, FaFlagCheckered } from 'react-icons/fa';
 import { createPortal } from 'react-dom';
 import { IoIosClose } from 'react-icons/io';
 
@@ -25,8 +25,8 @@ const GiveawayResume = ({ title, richtext, image, finish, winner, date }) => {
                 <h4>Concours terminé</h4>
                 {winner ? <p className="winner"><FaTrophy /> {winner}</p> : ''}
             </div>
-            <h2>{title}</h2>
             <img src={image} alt="Photo du lot à gagner" />
+            <h2>{title}</h2>
             <RichText richtext={richtext} />
             {displayDate()}
 
@@ -38,7 +38,7 @@ const GiveawayResume = ({ title, richtext, image, finish, winner, date }) => {
                     <div className='column'>
                         <IoIosClose onClick={() => setOpenModal(false)} />
                         <h2>{title}</h2>
-                        <p>{date}</p>
+                        {date ? <p className='date'><FaFlagCheckered /> {date}</p> : ''}
                         <RichText richtext={richtext} />
                     </div>
                 </div>

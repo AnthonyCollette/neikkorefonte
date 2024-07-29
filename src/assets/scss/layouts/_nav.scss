@@ -34,7 +34,6 @@ nav {
     }
 
     li {
-        padding: 20px 50px 20px 20px;
         border: 1px solid $white;
         border-radius: 0 10px 10px 0;
         overflow: hidden;
@@ -72,6 +71,17 @@ nav {
             &::before {
                 display: none;
             }
+        }
+
+        &:nth-child(1) {
+            a {
+                padding-left: 0;
+                padding-bottom: 0;
+            }
+        }
+
+        a {
+            padding: 20px 50px 20px 20px;
         }
     }
 
