@@ -21,9 +21,13 @@
 
 h1 {
     font-family: $font-001;
-    font-size: $font-xxxxl;
+    font-size: $font-xxxl;
     color: $white;
     text-align: center;
+
+    @include min($lg) {
+        font-size: $font-xxxxl;
+    }
 }
 
 .date {

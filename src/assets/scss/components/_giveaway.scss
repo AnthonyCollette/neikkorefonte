@@ -1,6 +1,6 @@
 .giveaway__resume {
     font-family: $font-002;
-    width: 400px;
+    width: 300px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -11,6 +11,10 @@
     position: relative;
     transition: all 0.2s ease-in-out;
     color: $white;
+
+    @include min($lg) {
+        width: 400px;
+    }
 
     .rich-text {
         * {
