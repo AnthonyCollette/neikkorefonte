@@ -34,3 +34,11 @@ h1 {
     font-family: $font-002;
     margin-bottom: 10px;
 }
+
+.text--default {
+    font-family: $font-002;
+    color: $white;
+    font-size: $font-xl;
+    text-align: center;
+    line-height: 1.5;
+}

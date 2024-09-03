@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: $white;
 
     &__content {
         width: 60vw;
@@ -20,6 +21,10 @@
         padding: 20px;
         border-radius: 30px;
         position: relative;
+
+        .rich-text * {
+            color: $white !important;
+        }
 
         h2 {
             font-family: $font-002--bold;
